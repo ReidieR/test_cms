@@ -1,0 +1,65 @@
+/* 后台登录页面css */
+#login_container {
+  width: 100%;
+  height: 600px;
+  /* background-image: url(/admin/images/login_img.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat; */
+  background: lightgreen;
+}
+#login_box {
+  border: 1px solid black;
+  box-shadow: 0 0 4px 4px rgba(125, 125, 0, 125);
+  border-radius: 10px;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  transform: translateX(-50%);
+  padding: 20px;
+  box-sizing: border-box;
+  background: lightblue;
+}
+#login_form {
+  margin-top: 30px;
+}
+#verify_code_box {
+  display: flex;
+  justify-content: space-between;
+}
+#verify_code_box img {
+  margin-left: 10px;
+}
+
+/* 后台公共部分样式 */
+.layui-fluid {
+  padding: 0;
+}
+/* 顶部固定区域 */
+.top-box ul {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+#top_title {
+  font-size: 22px;
+}
+#top_li dl {
+  background-color: #fff !important;
+  top: 60px;
+  padding: 5px;
+}
+/* 左侧导航 */
+.layui-col-space10 > * {
+  padding: 0;
+}
+#iframe_box,
+#left_nav {
+  padding: 0;
+}
+#container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
