@@ -64,6 +64,7 @@
           $('input[name="status"]').val(this.checked?2:1)
         }) 
     })
+    // 角色保存
     function groupSave(){
       let data = $('form').serialize();
       // let gid = $('input[name="gid"]').val()

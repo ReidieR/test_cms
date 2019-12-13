@@ -2,39 +2,20 @@
 
 namespace cms\Http\Models;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Authenticatable
+class Admin extends Model
 {
-    use Notifiable;
-    protected $table = "final_admins";
+    //关联表名
+    protected $table = 'final_admins';
+    // 时间戳管理
+    public $timestamps = false;
+    // 批量插入管理
+    protected $guarded = [];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // 关联管理员角色Group模型
+    // public function group()
+    // {
+    //     return $this->hasOne('cms\Http\Models\Group');
+    // }
 }

@@ -83,6 +83,7 @@
         layer.closeAll();
         });
     }
+
   </script>
 </body>
 </html>

@@ -40,6 +40,7 @@
       </table>
     </div>
     <script>
+      // 角色编辑
       function editGroup(gid){
         layer.open({
           type: 2,
@@ -49,6 +50,21 @@
           area: ['580px', '80%'],
           content: `/admins/group/edit?gid=${gid}`
         })
+      }
+      // 角色删除
+      function deleteMenu(gid){
+        layer.confirm('您确定要删除吗？', {
+          btn: ['确定','取消'] //按钮
+        }, function(){
+          let _token = $('input[name="_token"]').val()
+          $.post('/admins/group/delete',{_token,gid},res=>{
+                  if (res.code != 0) return layer.msg('删除失败',{title:'友情提示',icon:2})
+                  layer.msg(res.msg,{title:'友情提示',icon:1})
+                  setTimeout(() => window.location.reload(),1000)
+                },'json')
+        }, function(){
+          layer.msg('删除已取消',{time:1000})
+        });
       }
     </script>
 </body>

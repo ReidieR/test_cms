@@ -22,10 +22,10 @@ class Account extends Controller
         // 对表单输入行为进行验证
         $data = $req->all();
         unset($data['_token']);
-        if (!$data['username']){    // 用户名输入验证
+        if (!$data['username']) {    // 用户名输入验证
             return response()->json(array('code'=>1,'msg'=>'用户不能为空'));
         }
-        if (!$data['password']){    // 密码输入验证
+        if (!$data['password']) {    // 密码输入验证
             return response()->json(array('code'=>1,'msg'=>'密码不能为空'));
         }
         // 验证码验证

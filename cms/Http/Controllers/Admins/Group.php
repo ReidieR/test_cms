@@ -87,6 +87,13 @@ class Group extends Controller
         return response()->json(array('code'=>0,'msg'=>'保存成功'));
     }
 
+    // 角色删除
+    public function delete(Request $req)
+    {
+        $gid=(int)$req->gid;
+        Groups::where('gid', $gid)->delete();
+        return response()->json(array('code'=>0,'msg'=>'删除成功'));
+    }
     // 获取所有的菜单并将菜单转换为树形结构
     public function getTreeMenu($menus)
     {

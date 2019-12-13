@@ -49,4 +49,18 @@ Route::group(['prefix'=>'admins','namespace'=>'Admins','middleware'=>['auth','ri
     Route::get('group/edit', 'Group@edit');          // 角色编辑
     Route::post('group/save', 'Group@save');         // 角色保存
     Route::post('group/delete', 'Group@delete');     // 角色删除
+
+    // 分类管理路由
+    // 文章分类
+    Route::get('article/index', 'Article@index');      // 文章分类列表
+    Route::get('article/edit', 'Article@edit');      // 编辑文章分类
+    Route::post('article/save', 'Article@save');     // 保存文章分类
+    Route::post('article/delete', 'Article@delete');     // 删除文章分类
+
+    // 内容管理
+    // 文章内容管理
+    Route::get('essay/index', 'Essay@index');        // 文章内容列表
+    Route::get('essay/edit', 'Essay@edit');          // 编辑文章
+    Route::post('essay/save', 'Essay@save');         // 保存文章
+    Route::post('essay/delete', 'Essay@delete');     // 删除文章
 });
