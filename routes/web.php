@@ -16,3 +16,10 @@
 // });
 // 引入后台路由文件
 include __DIR__ . './admin/web.php';
+
+// 引入前台路由文件
+include __DIR__ . './index/web.php';
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

@@ -1,0 +1,47 @@
+{
+  // Place your laravel_final 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Print to console": {
+    "scope": "blade,html",
+    "prefix": "ch",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "@include('public.public.link')",
+      "<title> ${1:title} </title>",
+      "</head>",
+      "<body>",
+      "{{-- 顶部导航区 --}}",
+      "@include('index.public.header')",
+      "{{-- 内容主体区域 --}}",
+      "<div class=\"layui-container\">",
+      "<div class=\"layui-row\">",
+      "{{-- 主体左侧内容展示区 --}}",
+      "<div class=\"layui-col-lg10\" style=\"border:red 1px solid;height:500px\">",
+      "\r",
+      "</div>",
+      "{{-- 主体右侧固定内容区 --}}",
+      "@include('index.public.rightContent')",
+      "</div>  ",
+      "</div>",
+      "{{-- 底部固定区 --}}",
+      "@include('index.public.footer')"
+    ],
+    "description": "快速创建视图模板文件"
+  }
+}

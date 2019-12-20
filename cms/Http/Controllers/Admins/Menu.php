@@ -5,6 +5,7 @@ namespace cms\Http\Controllers\Admins;
 use Illuminate\Http\Request;
 use cms\Http\Controllers\Controller;
 use cms\Http\Models\Menu as Menus;
+use Auth;
 use DB;
 
 class Menu extends Controller
@@ -59,6 +60,11 @@ class Menu extends Controller
                 return response()->json(array('code'=>1,'msg'=>'该菜单名称已存在'));
             }
             Menus::insert($data);
+        }
+        $username = Auth::user()->username;
+        $filename =$username.'abc';
+        if (\file_exists($filename)) {
+            unlink($filename);
         }
         return response()->json(array('code'=>0,'msg'=>'保存成功'));
     }

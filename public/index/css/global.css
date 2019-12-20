@@ -1,0 +1,35 @@
+/* 公共页面部分css */
+#public_nave,
+.nav-box {
+  display: flex;
+}
+.site-title span {
+  font-size: 20px !important;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+.site-title {
+  flex: 0.1;
+}
+.nav-box {
+  flex: 0.9;
+  justify-content: space-between;
+}
+.footer {
+  height: 50px;
+  text-align: center;
+  background: #393d49;
+  color: #fff;
+  line-height: 50px;
+}
+
+/* 右侧固定内容区域的css */
+
+/* 个人信息部分 */
+#right_content_box {
+  padding: 10px;
+  border: red 1px solid;
+}
+.user-info dl {
+  margin-left: 30px;
+}

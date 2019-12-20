@@ -3,6 +3,11 @@
 <head>
 @include('admins.public.link')
 <title> 文章管理 </title>
+<style>
+  #pre_img {
+    height: 25px;
+  }
+</style>
 </head>
 <body>
   <div class="layui-fluid">
@@ -35,7 +40,7 @@
         <tr>
           <td>{{$item['aid']}}</td>
           <td>{{$item['cate_title']}}</td>
-          <td>{{$item['title']}}</td>
+          <td><img src="{{$item['cover_img']}}" alt="" id="pre_img">{{$item['title']}}</td>
           <td>{{$item['author']}}</td>
           <td>{{date('Y-m-d H:m:s',$item['updated_at'])}}</td>
           <td>{{$item['status'] == 2 ? '是' : '否'}}</td>
@@ -49,28 +54,29 @@
         @endforeach
       </tbody>
     </table>
+    {{$links}}
   </div>
   <script>
     // 编辑文章
-    function editEssay(mid){
+    function editEssay(aid){
       let pid = $('input[name="pid"]').val();
       layer.open({
         type: 2,
-        title: mid>0 ? '修改文章' : '编辑文章',
+        title: aid>0 ? '修改文章' : '添加文章',
         shadeClose: true,
         shade: 0.4,
-        area: ['580px', '80%'],
-        content: `/admins/Essay/edit?mid=${mid}&pid=${pid}`
+        area: ['100%', '100%'],
+        content: `/admins/essay/edit?aid=${aid}`
       })
     }
 
     // 删除文章
-    function deleteEssay(mid){
+    function deleteEssay(aid){
       layer.confirm('您确定要删除吗？', {
         btn: ['确定','取消'] //按钮
       }, function(){
         let _token = $('input[name="_token"]').val();
-        $.post('/admins/Essay/delete',{_token,mid},res => {
+        $.post('/admins/essay/delete',{_token,aid},res => {
           if (res.code !=0) return layer.msg(res.msg,{title:'友情提示',icon:2})
           setTimeout(() => window.location.reload(), 1000)
         },'json')

@@ -51,6 +51,7 @@ class Account extends Controller
         if (!$res) {
             return response()->json(array('code'=>1,'msg'=>'用户名或密码错误'));
         }
+        $user = Auth::user();
         return response()->json(array('code'=>0,'msg'=>'登录成功'));
     }
 }

@@ -42,6 +42,16 @@ class Article extends Controller
     // 保存分类
     public function save(Request $req)
     {
+        $res = \cms\Http\Models\Essay::get('aid')->toArray();
+        array_shift($res);
+        foreach ($res as $key => $val) {
+            $cid = $key+4;
+            DB::table('final_article_content')->where('cid', $cid)->update(['aid'=>$val['aid']]);
+        }
+
+
+
+
         $data = $req->except('_token');
         $id = $data['art_cate_id'];     // 分类id
         unset($data['art_cate_id']);

@@ -63,4 +63,17 @@ Route::group(['prefix'=>'admins','namespace'=>'Admins','middleware'=>['auth','ri
     Route::get('essay/edit', 'Essay@edit');          // 编辑文章
     Route::post('essay/save', 'Essay@save');         // 保存文章
     Route::post('essay/delete', 'Essay@delete');     // 删除文章
+
+    //  图片管理
+    Route::post('image/upload', 'Image@upload');     // 图片上传
+    Route::get('image/index', 'Image@index');        // 图片列表
+    Route::get('image/edit', 'Image@edit');          // 图片编辑
+    Route::post('image/save', 'Image@save');         // 图片保存
+    Route::post('image/delete', 'Image@delete');     // 图片删除
+
+    // 用户管理
+    Route::get('member/index', 'Member@index');         // 用户列表
+    Route::get('member/edit', 'Member@edit');           // 用户列表
+    Route::post('member/save', 'Member@save');          // 用户列表
+    Route::post('member/delete', 'Member@delete');      // 用户列表
 });

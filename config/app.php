@@ -82,6 +82,7 @@ return [
 
     'locale' => 'zh-CN',
 
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -106,7 +107,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'zh_CN',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,6 +168,7 @@ return [
          */
         Mews\Captcha\CaptchaServiceProvider::class,     // 验证码扩展包
         Barryvdh\Debugbar\ServiceProvider::class,       // laravel-debugger
+        Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,  // 七牛云存储扩展包
 
 
         /*

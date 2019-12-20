@@ -42,7 +42,7 @@ class DbServiceProvider extends ServiceProvider
 
         //扩展数组方法
         QueryBuilder::macro('lists', function () {
-            $res = $this->get()->all();
+            $res = $this->get()->toArray();
             foreach ($res as $key => $val) {
                 $res[$key] = (array)$val;
             }
