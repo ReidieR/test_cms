@@ -169,7 +169,8 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,     // 验证码扩展包
         Barryvdh\Debugbar\ServiceProvider::class,       // laravel-debugger
         Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,  // 七牛云存储扩展包
-
+        Overtrue\LaravelUEditor\UEditorServiceProvider::class,  // 百度编辑器扩展包
+        
 
         /*
          * Application Service Providers...
@@ -181,6 +182,8 @@ return [
         cms\Providers\RouteServiceProvider::class,
         // 扩展查询方法
         cms\Providers\DbServiceProvider::class,
+        // 导航栏数据共享服务
+        cms\Providers\PublicDateServiceProvider::class,
 
     ],
 

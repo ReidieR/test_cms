@@ -22,16 +22,6 @@ class Home extends Controller
             $res[] = $article;
         }
         $data['result'] = $res;
-        // dd($data);
         return view('index.home.index', $data);
-    }
-
-    // 将一维数组转化为多维数组
-    public function getTreeAraay($items)
-    {
-        $res = [];
-        foreach ($items as $item) {
-            if ($itemp['pid']);
-        }
     }
 }

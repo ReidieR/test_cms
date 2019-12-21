@@ -1,4 +1,11 @@
 /* 公共页面部分css */
+
+/* 公共顶部导航 开始 */
+body {
+  background-color: #eee;
+  min-width: 1200px;
+}
+
 #public_nave,
 .nav-box {
   display: flex;
@@ -15,6 +22,9 @@
   flex: 0.9;
   justify-content: space-between;
 }
+/* 公共顶部导航 结束 */
+
+/* 公共底部  开始*/
 .footer {
   height: 50px;
   text-align: center;
@@ -22,14 +32,96 @@
   color: #fff;
   line-height: 50px;
 }
+/* 公共底部  结束*/
 
 /* 右侧固定内容区域的css */
 
 /* 个人信息部分 */
 #right_content_box {
   padding: 10px;
-  border: red 1px solid;
+  /* border: red 1px solid; */
 }
 .user-info dl {
   margin-left: 30px;
 }
+
+#right_content_box .layui-card {
+  width: 274px !important;
+}
+#right_content_box .hot-article {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 右侧固定内容区域结束 */
+
+/* 主页样式 开始 */
+.home-article {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid #000; */
+}
+.home-article > img {
+  flex: 0.1;
+  width: 100px;
+  height: 100px;
+}
+.home-article-content {
+  flex: 0.9;
+  margin-left: 20px;
+}
+.home-article-content dl {
+  margin-right: 20px;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+.home-article-content p {
+  text-indent: 2rem;
+}
+.home-article-content dl dd {
+  margin-left: 20px;
+}
+.home-article-content h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+}
+#cate_title {
+  font-size: 24px;
+  font-weight: bold;
+}
+#article_title {
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+#cate_box {
+  line-height: 50px;
+  /* height: 50px; */
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+/* 主页样式 结束 */
+
+/* 列表页样式  开始 */
+#list_container article {
+  display: flex;
+}
+#list_container article img {
+  width: 100px;
+  height: 100px;
+}
+#list_cate_title {
+  margin-top: 10px;
+  height: 50px;
+  padding: 10px;
+  font-size: 20px;
+  color: green;
+}
+/* 列表页样式  结束 */

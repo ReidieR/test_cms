@@ -9,26 +9,21 @@
       <li class="layui-nav-item">
         <a href="/">首页</a>
       </li>
+      @foreach($nav as $item)
       <li class="layui-nav-item">
-        <a href="">前端</a>
+        <a href="">{{$item['art_cate_title']}}</a>
+        @if(isset($item['children']))
         <dl class="layui-nav-child">
-          <dd><a href="javascript:;">html</a></dd>
-          <dd><a href="javascript:;">css</a></dd>
-          <dd><a href="javascript:;">JavaScript</a></dd>
+          @foreach($item['children'] as $chd)
+          <dd><a href="/list/{{$chd['art_cate_id']}}">{{$chd['art_cate_title']}}</a></dd>
+          @endforeach
         </dl>
+        @endif
       </li>
-      <li class="layui-nav-item">
-        <a href="">后端</a>
-      </li>
-      <li class="layui-nav-item">
-        <a href="">数据库</a>
-      </li>
-      <li class="layui-nav-item">
-        <a href="">iOS</a>
-      </li>
+      @endforeach
     </div>
     <div class="right-nav">
-      @if(session('username'))
+      @if(\Auth::guard('member')->user())
       <li class="layui-nav-item">
         <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">{{session('username')}}</a>
         <dl class="layui-nav-child">

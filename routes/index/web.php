@@ -11,7 +11,9 @@ Route::namespace('Index')->group(function () {
     Route::get('/list/{cate_id}', 'Lists@index');   // 列表頁
     Route::get('/detail/{aid}', 'Detail@index');     // 详情页面
     Route::get('/logout', 'Account@logout');     // 登出
+    Route::get('/edit/{user_id}', 'Edit@index');     // 文章编辑页面
 });
 
-Route::group(['namespace'=>'Index','middleware'=>'Member'], function () {
-});
+// Route::group(['namespace'=>'Index','middleware'=>'member'], function () {
+//     Route::get('/edit/{user_id}', 'Edit@index');     // 文章编辑页面
+// });

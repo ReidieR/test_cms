@@ -50,8 +50,7 @@ class Account extends Controller
             }
         }
         $user = Auth::guard('member')->user();
-        session(['username'=>$user->username,'user_id'=>$user->user_id]);
-        return redirect('/');
+        return redirect()->intended('/');
     }
 
     // 註冊頁面

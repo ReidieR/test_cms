@@ -8,6 +8,6 @@
 <!-- 引入layui框架的css和js、layer.js -->
 <link rel="stylesheet" href="/static/layui/css/layui.css">
 <script src="/static/layui/layui.js"></script>
-<!-- 引入自定义的后台页面js -->
+<!-- 引入自定义的前台页面js和css-->
 <link rel="stylesheet" href="/index/css/global.css">
 <script src="/index/js/global.js"></script>

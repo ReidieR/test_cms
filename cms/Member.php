@@ -3,12 +3,12 @@
 namespace cms;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Member extends Model implements \Illuminate\Contracts\Auth\Authenticatable
+class Member extends Authenticatable
 {
-    use Notifiable,Authenticatable;
+    use Notifiable;
     protected $table = 'final_users';
     public $timestamps = false;
     /**

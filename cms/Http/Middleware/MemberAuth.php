@@ -3,6 +3,8 @@
 namespace cms\Http\Middleware;
 
 use Closure;
+use DB;
+use Auth;
 
 class MemberAuth
 {
@@ -15,6 +17,13 @@ class MemberAuth
      */
     public function handle($request, Closure $next)
     {
+        if (Auth::guard('member')->guest()) {
+            if ($request->ajax() || $request->wantsJson()) {
+                return response('Unauthorized.', 401);
+            } else {
+                return redirect()->guest('/login');
+            }
+        }
         return $next($request);
     }
 }

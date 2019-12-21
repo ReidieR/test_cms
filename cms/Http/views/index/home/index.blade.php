@@ -3,51 +3,6 @@
 <head>
 @include('index.public.link')
 <title> 首页 </title>
-<style>
-.home-article{
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  border:1px solid #000;
-}
-.home-article>img{
-  flex:0.1;
-  width: 100px;
-  height: 100px;
-}
-.home-article-content{
-  flex:0.9;
-  margin-left: 20px;
-}
-.home-article-content dl {
-  display: flex;
-  justify-content: flex-end;
-}
-.home-article-content p {
-  text-indent: 2rem;
-}
-.home-article-content dl dd{
-  margin-left: 20px;
-}
-#cate_title {
-  font-size: 24px;
-  border:1px red solid;
-}
-#article_title {
-  height: 30px;
-  line-height: 30px;
-  font-size:18px;
-  border:1px green solid;
-}
-#cate_box {
-  line-height: 50px;
-  /* height: 50px; */
-  box-sizing: border-box;
-  padding:10px;
-  display: flex;
-  justify-content: space-between;
-}
-</style>
 </head>
 <body>
   {{-- 顶部导航区 --}}
