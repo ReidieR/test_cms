@@ -40,7 +40,9 @@
       "</div>  ",
       "</div>",
       "{{-- 底部固定区 --}}",
-      "@include('index.public.footer')"
+      "@include('index.public.footer')",
+      "</body>",
+      "</html>"
     ],
     "description": "快速创建视图模板文件"
   }

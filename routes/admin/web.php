@@ -69,6 +69,7 @@ Route::group(['prefix'=>'admins','namespace'=>'Admins','middleware'=>['auth','ri
     Route::get('/essay/edit', 'Essay@edit');          // 编辑文章
     Route::post('/essay/save', 'Essay@save');         // 保存文章
     Route::post('/essay/delete', 'Essay@delete');     // 删除文章
+    Route::post('/essay/read/{aid}', 'Essay@read');          // 文章阅读量自增
 
     //  图片管理
     Route::post('/image/upload', 'Image@upload');     // 图片上传

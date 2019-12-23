@@ -11,6 +11,10 @@ class Detail extends Controller
     public function index(Request $req)
     {
         $aid = (int)$req->aid;
+        $err =DB::table('final_article')->where('aid', $aid)->increment('read_num');
+        if (!$err) {
+            return redirect('/');
+        }
         $res =DB::table('final_article')->where('aid', $aid)->item();
         if (!$res) {
             return view('index.public.dsf');

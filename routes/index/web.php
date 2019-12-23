@@ -9,6 +9,7 @@ Route::namespace('Index')->group(function () {
     Route::get('/register', 'Account@register');   // 前台注册页面
     Route::post('/doregister', 'Account@doregister');    // 注册
     Route::get('/list/{cate_id}', 'Lists@index');   // 列表頁
+    // Route::post('/list/paginate', 'Lists@paginate');    // 列表分页
     Route::get('/detail/{aid}', 'Detail@index');     // 详情页面
     Route::get('/logout', 'Account@logout');     // 登出
     Route::get('/edit/{user_id}', 'Edit@index');     // 文章编辑页面
