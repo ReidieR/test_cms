@@ -29,8 +29,9 @@ function dologin() {
     data,
     function(res) {
       // 根据返回的数据进行判断
-      if (res.code != 0)
-        return layer.msg(res.msg, { title: '错误提示', icon: 2 }) // 登录失败
+      if (res.code != 0) {
+        return layer.msg(res.msg, { title: '错误提示', icon: 2 })
+      } // 登录失败
       layer.msg(res.msg, { icon: 1 })
       setTimeout(() => (window.location.href = '/admins/home/index'), 1000) // 登录成功跳转到后台
     },

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use cms\Http\Controllers\Controller;
 use cms\Http\Models\Essay as Ess;
 use DB;
+use Auth;
 
 class Lists extends Controller
 {
@@ -14,21 +15,19 @@ class Lists extends Controller
     {
         // 获取分类id
         $cate_id = (int)$req->cate_id;
-       
         // 获取分页内容
-        $data = DB::table('final_article')->where('cate_id', $cate_id)->page(10);
+        $data = DB::table('final_article')->where('cate_id', $cate_id)->orderBy('created_at', 'desc')->page(10);
         // 获取分类标题
         $data['title']=DB::table('final_article_category')->where('art_cate_id', $cate_id)->item();
-        // $res = Ess::where('cate_id', $cate_id)->paginate(10);
-        // $data['total']=$res->total();
-        // // dd($res);
-        // $result= $res->toArray();
-        // // dd($result);
-        // // 获取文章信息
-        // $data['article'] = $result['data'];
-        // // 获取底部分页链接
-        // $data['links'] = $res->links();
-        // dd($data);
+        if (Auth::guard('member')->user()) {
+            // 获取用户id
+            $user_id = Auth::guard('member')->user()->user_id;
+            // 获取用户收藏文章信息
+            $res = DB::table('final_conllections')->where('user_id', $user_id)->item();
+            if ($res) {
+                $data['conllection']= json_decode($res['conllect_article'], true);
+            }
+        }
         return view('index.list.index', $data);
     }
     // layui分页数据获取

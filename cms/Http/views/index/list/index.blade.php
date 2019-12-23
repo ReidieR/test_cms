@@ -34,7 +34,11 @@
         <h3 id=article_title onclick="clickArticleTitle({{$chd['aid']}})"><a href="/detail/{{$chd['aid']}}">{{$chd['title']}}</a></h3>
         <p>{{$chd['descs']}}</p>
         <dl>
-          <dd><a href="javascript:0">点击收藏<i class="layui-icon layui-icon-star" style="margin-left: 10px;"></i></a></dd>
+          <dd><span class="conllect_art_span"
+            onclick="{{\Auth::guard('member')->user()?'collectArticle':'conllectToLogin'}}(this,{{$chd['aid']}})">
+            {{isset($conllection) && in_array($chd['aid'],$conllection) ? '已收藏':'点击收藏'}}
+            <i class="layui-icon {{isset($conllection) && in_array($chd['aid'],$conllection) ? 'layui-icon-star-fill':'layui-icon-star'}}" ></i>
+          </span></dd>
           <dd>阅读量:<span>{{$chd['read_num']}}</span></dd>
         </dl>
       </div>

@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 use cms\Http\Controllers\Controller;
 use Validator;
 use Auth;
+use DB;
 use cms\Member;
 
 class Account extends Controller
 {
-
+    
     // 登錄頁面
     public function login()
     {
@@ -49,8 +50,8 @@ class Account extends Controller
                 }
             }
         }
-        $user = Auth::guard('member')->user();
-        return redirect()->intended('/');
+        $user_id = Auth::guard('member')->user()->user_id;
+        return redirect('/');
     }
 
     // 註冊頁面
@@ -86,8 +87,7 @@ class Account extends Controller
     // 退出登录
     public function logout()
     {
-        $user=Auth::guard('member')->user();
-        session()->forget('username', 'user_id');
+        Auth::guard('member')->logout();
         return redirect('/login');
     }
 }

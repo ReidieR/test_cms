@@ -5,6 +5,7 @@ namespace cms\Providers;
 use Illuminate\Support\ServiceProvider;
 use View;
 use DB;
+use Auth;
 
 class PublicDateServiceProvider extends ServiceProvider
 {
@@ -59,6 +60,7 @@ class PublicDateServiceProvider extends ServiceProvider
         return $article;
     }
 
+    // 友情链接
     public function link()
     {
         return DB::table('final_links')->limit(7)->lists();

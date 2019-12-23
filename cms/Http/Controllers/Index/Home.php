@@ -5,6 +5,7 @@ namespace cms\Http\Controllers\Index;
 use Illuminate\Http\Request;
 use cms\Http\Controllers\Controller;
 use DB;
+use Auth;
 
 class Home extends Controller
 {
@@ -22,6 +23,15 @@ class Home extends Controller
             $res[] = $article;
         }
         $data['result'] = $res;
+        if (Auth::guard('member')->user()) {
+            // 获取用户id
+            $user_id = Auth::guard('member')->user()->user_id;
+            // 获取用户收藏文章信息
+            $res = DB::table('final_conllections')->where('user_id', $user_id)->item();
+            if ($res) {
+                $data['conllection']= json_decode($res['conllect_article'], true);
+            }
+        }
         return view('index.home.index', $data);
     }
 }

@@ -13,6 +13,7 @@
       {{-- 主体左侧内容展示区 --}}
       <div class="layui-col-lg9">
         <div class="layui-row">
+          {{-- 左侧导航 --}}
           <div class="layui-col-lg2" id="left_content_nav">
             <div class="layui-row">
               <div class="layui-card">
@@ -27,6 +28,7 @@
               </div>
             </div>
           </div>
+          {{-- 右侧文章列表 --}}
           <div class="layui-col-lg10">
             @foreach($result as $item)
             <div id="cate_box">
@@ -43,7 +45,11 @@
                 <h3 id=article_title onclick="clickArticleTitle({{$chd['aid']}})"><a href="/detail/{{$chd['aid']}}">{{$chd['title']}}</a></h3>
                   <p>{{$chd['descs']}}</p>
                   <dl>
-                    <dd><a href="javascript:0">点击收藏<i class="layui-icon layui-icon-star" style="margin-left: 10px;"></i></a></dd>
+                    <dd><span class="conllect_art_span"
+                      onclick="{{\Auth::guard('member')->user()?'collectArticle':'conllectToLogin'}}(this,{{$chd['aid']}})">
+                      {{isset($conllection) && in_array($chd['aid'],$conllection) ? '已收藏':'点击收藏'}}
+                      <i class="layui-icon {{isset($conllection) && in_array($chd['aid'],$conllection) ? 'layui-icon-star-fill':'layui-icon-star'}}" ></i>
+                    </span></dd>
                     <dd>阅读量:<span>{{$chd['read_num']}}</span></dd>
                   </dl>
                 </div>
@@ -64,9 +70,9 @@
   @include('index.public.footer')
   <script>
     $(document).ready(function(){
+      // 右边内容区显示控制
       $(window).scroll(function(){
         let y = document.documentElement.scrollTop
-        console.log(y)
         if (y >= 1100) {
           $('#right_user_card').addClass('user-card');
         } 
@@ -75,6 +81,7 @@
         }
       })
     })
+
   </script>
 </body>
 </html>

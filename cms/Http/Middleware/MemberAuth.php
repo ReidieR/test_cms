@@ -19,7 +19,7 @@ class MemberAuth
     {
         if (Auth::guard('member')->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
-                return response('Unauthorized.', 401);
+                return response()->json(['code'=>401,'msg'=>'該頁面不見了']);
             } else {
                 return redirect()->guest('/login');
             }

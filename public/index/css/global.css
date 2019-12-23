@@ -93,6 +93,12 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+.conllect_art_span:hover {
+  cursor: pointer;
+}
+.conllect_art_span i {
+  margin-left: 10px;
+}
 .home-article-content p {
   text-indent: 2rem;
 }

@@ -1,7 +1,6 @@
 <?php
 // 前台路由
 
-
 Route::namespace('Index')->group(function () {
     Route::get('/', 'Home@index');    // 前台主页
     Route::get('/login', 'Account@login');   // 前台登录页
@@ -12,9 +11,10 @@ Route::namespace('Index')->group(function () {
     // Route::post('/list/paginate', 'Lists@paginate');    // 列表分页
     Route::get('/detail/{aid}', 'Detail@index');     // 详情页面
     Route::get('/logout', 'Account@logout');     // 登出
-    Route::get('/edit/{user_id}', 'Edit@index');     // 文章编辑页面
 });
 
-// Route::group(['namespace'=>'Index','middleware'=>'member'], function () {
-//     Route::get('/edit/{user_id}', 'Edit@index');     // 文章编辑页面
-// });
+Route::group(['namespace'=>'Index','middleware'=>'member'], function () {
+    Route::get('/member/{user_id?}', 'Member@index');     // 個人中心
+    Route::get('/edit/{user_id?}', 'Edit@index');     // 文章编辑页面
+    Route::get('/member/conllect/{aid}', 'Member@conllect');     // 收藏或者取消收藏文章
+});

@@ -34,18 +34,6 @@ class Account extends Controller
         if ($validator->fails()) {
             return response()->json(array('code'=>1,'msg'=>'验证码错误'));
         }
-        // 表单验证
-        // $rules = [
-        //     'username' => 'required',
-        //     'password' => 'required',
-        //     'verify_code' => 'required|captcha'
-        // ];
-        // $validator = validator()->make($data, $rules);
-        // if ($validator->fails()) {
-        //     $errors = validator()->withErrors($validator);
-        //     dd($errors);
-        //     return response()->json(array('code'=>1,'msg'=>'验证码错误'));
-        // }
         // 使用中间件对用户的输入信息进行验证
         $res = Auth::attempt(['username'=>$data['username'],'password'=>$data['password'],'status'=>1]);
         if (!$res) {

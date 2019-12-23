@@ -11,10 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 // 后台登录
 Route::get('/admins/account/login', 'Admins\Account@login')->name('login');     // 登录视图
 Route::post('/admins/account/dologin', 'Admins\Account@dologin');   // 登录验证

@@ -25,7 +25,7 @@
     <div class="right-nav">
       @if(\Auth::guard('member')->user())
       <li class="layui-nav-item">
-        <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">{{session('username')}}</a>
+        <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">{{Auth::guard('member')->user()->username}}</a>
         <dl class="layui-nav-child">
           <dd><a href="javascript:;">我的主页</a></dd>
           <dd><a href="javascript:;">个人设置</a></dd>
