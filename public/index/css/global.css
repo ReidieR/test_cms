@@ -157,3 +157,20 @@ body {
   color: green;
 }
 /* 列表页样式  结束 */
+
+/*个人式开中心始 */
+#user_center_nav:hover {
+  cursor: pointer;
+}
+#user_center_nav li:hover,
+#user_center_nav a:hover {
+  background-color: pink;
+  color: green;
+}
+
+.member-content-header {
+  padding: 10px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+}
+/* 个人中心样式结束 */

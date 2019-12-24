@@ -35,11 +35,6 @@
         </dl>
       </div>
     </div>
-    {{-- <ul class="layui-fixbar" style="right: 50px; bottom: 100px;">
-      <li class="layui-icon" lay-type="bar1" style="background-color:#393D49"></li>
-      <li class="layui-icon" lay-type="bar2" style="background-color:#393D49"></li>
-      <li class="layui-icon layui-fixbar-top" lay-type="top" style="background-color:#393D49"></li>
-    </ul> --}}
   </div>
 </div>
 <script>

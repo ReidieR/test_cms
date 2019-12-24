@@ -14,7 +14,8 @@ Route::namespace('Index')->group(function () {
 });
 
 Route::group(['namespace'=>'Index','middleware'=>'member'], function () {
-    Route::get('/member/{user_id?}', 'Member@index');     // 個人中心
-    Route::get('/edit/{user_id?}', 'Edit@index');     // 文章编辑页面
+    Route::get('/member', 'Member@index');       // 個人中心
+    Route::get('/member/info', 'Member@info');  // 个人资料
+    Route::get('/edit', 'Edit@index');           // 文章编辑页面
     Route::get('/member/conllect/{aid}', 'Member@conllect');     // 收藏或者取消收藏文章
 });

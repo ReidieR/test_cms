@@ -4,10 +4,10 @@ namespace cms\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Essay extends Model
+class Image extends Model
 {
-    protected $table = 'final_article';
+    //关联表
+    protected $table = 'final_image';
     public $timestamps = false;
-    protected $primaryKey = 'aid';
     protected $guarded = [];
 }

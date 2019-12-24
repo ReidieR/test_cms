@@ -3,6 +3,7 @@
 namespace cms\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Auth;
 
 class Authenticate extends Middleware
 {
@@ -14,6 +15,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
+        dd(Auth::user());
         if (! $request->expectsJson()) {
             return route('login');
         }

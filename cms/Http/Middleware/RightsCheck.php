@@ -20,7 +20,7 @@ class RightsCheck
     public function handle($request, Closure $next)
     {
         // 获取登录的用户名
-        $admin = Auth::user();
+        $admin = Auth::guard('admin')->user();
         // 根据用户名信息获取用户的分组角色信息
         $role = DB::table('final_admin_groups')->where('gid', $admin->group_id)->item();
         // 判断该分组角色是否存在

@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         // 自定义的中间件
         'rights' => \cms\Http\Middleware\RightsCheck::class,   // 用户权限校验
+        'admin' => \cms\Http\Middleware\AdminAuth::class,
         'member' => \cms\Http\Middleware\MemberAuth::class,     // 前台用户登录验证中间件
     ];
 

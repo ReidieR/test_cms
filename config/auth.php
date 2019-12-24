@@ -46,7 +46,10 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
         'member' => [
             'driver' => 'session',
             'provider' => 'members',
@@ -76,7 +79,10 @@ return [
             'driver' => 'eloquent',
             'model' => cms\User::class,
         ],
-
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => cms\User::class,
+        ],
         'members' => [
             'driver' => 'eloquent',
             'model' => cms\Member::class,

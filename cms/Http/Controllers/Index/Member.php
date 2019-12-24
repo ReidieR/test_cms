@@ -7,6 +7,7 @@ use cms\Http\Controllers\Controller;
 use cms\Member as Mem;
 use Auth;
 use DB;
+use cms\Http\Models\Essay as Ess;
 use cms\Http\Models\Conllection as Con;
 
 class Member extends Controller
@@ -14,10 +15,26 @@ class Member extends Controller
     //用户个人中心页面
     public function index()
     {
-        // session('collection');
-        $user_id = Auth::guard('member')->user()->user_id;
-        dd(session('conllection'));
-        return view('index.member.index');
+        // 获取用户信息
+        $user = Auth::guard('member')->user();
+        // 用户id
+        $user_id = $user->user_id;
+        // 用户名
+        $username = $user->username;
+        // 获取用户写的文章
+        $article = Ess::where('author', $username)->get()->toArray();
+        if ($article) {
+            $data['article'] = $article;
+        }
+        // 获取用户收藏的文章
+        $conllectArticleIDs = Con::where('user_id', $user_id)->first();
+        if ($conllectArticleIDs) {
+            $conllectArticleIDs = $conllectArticleIDs->conllect_article;
+            $conllectArticleIDs = json_decode($conllectArticleIDs, true);
+            $data['con_article'] =  Ess::whereIn('aid', $conllectArticleIDs)->get()->toArray();
+        }
+        $data['user']=$user->toArray();
+        return view('index.member.index', $data);
     }
 
     // 收藏或者取消收藏

@@ -69,14 +69,14 @@ class Home extends Controller
     // 退出登录
     public function logout()
     {
-        Auth::logout();
-        return \redirect('/admins/account/login');
+        Auth::guard('admin')->logout();
+        return redirect('/admins/account/login');
     }
 
     // 用户资料视图
     public function adminInfo(Request $req)
     {
-        $data['admin'] = Auth::user();
+        $data['admin'] = Auth::guard('admin')->user();
         return view('admins.home.admininfo', $data);
     }
 
@@ -93,7 +93,7 @@ class Home extends Controller
         ];
         $validated = $req->validate($rules);
         if ($validated) {
-            $id = Auth::user()->id;
+            $id = Auth::guard('admin')->user()->id;
             DB::table('final_admins')->where('id', $id)->update($validated);
         }
         return redirect('/admins/home/admininfo');

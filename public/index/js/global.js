@@ -45,3 +45,9 @@ function conllectToLogin() {
     }
   )
 }
+// 个人中心页面js
+function contentSwith(index) {
+  let con_ac = $(index).attr('con_ac')
+  let url = `/index/user/${con_ac}`
+  $('iframe').attr('src', url)
+}

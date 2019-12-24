@@ -35,11 +35,11 @@ class Account extends Controller
             return response()->json(array('code'=>1,'msg'=>'验证码错误'));
         }
         // 使用中间件对用户的输入信息进行验证
-        $res = Auth::attempt(['username'=>$data['username'],'password'=>$data['password'],'status'=>1]);
+        $res = Auth::guard('admin')->attempt(['username'=>$data['username'],'password'=>$data['password'],'status'=>1]);
         if (!$res) {
             return response()->json(array('code'=>1,'msg'=>'用户名或密码错误'));
         }
-        $user = Auth::user();
+        $user = Auth::guard('admin')->user();
         return response()->json(array('code'=>0,'msg'=>'登录成功'));
     }
 }

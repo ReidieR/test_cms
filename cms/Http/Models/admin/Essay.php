@@ -8,6 +8,5 @@ class Essay extends Model
 {
     protected $table = 'final_article';
     public $timestamps = false;
-    protected $primaryKey = 'aid';
     protected $guarded = [];
 }

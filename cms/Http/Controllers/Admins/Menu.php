@@ -61,7 +61,7 @@ class Menu extends Controller
             }
             Menus::insert($data);
         }
-        $username = Auth::user()->username;
+        $username = Auth::guard('admin')->user()->username;
         $filename =$username.'abc';
         if (\file_exists($filename)) {
             unlink($filename);

@@ -16,7 +16,7 @@ Route::get('/admins/account/login', 'Admins\Account@login')->name('login');     
 Route::post('/admins/account/dologin', 'Admins\Account@dologin');   // 登录验证
 
 // 后台页面路由
-Route::group(['prefix'=>'admins','namespace'=>'Admins','middleware'=>['auth','rights']], function () {
+Route::group(['prefix'=>'admins','namespace'=>'Admins','middleware'=>['admin','rights']], function () {
     // 后台首页路由
     Route::get('/home/index', 'Home@index');  // 后台首页
     Route::get('/home/welcome', 'Home@welcome');    // 后台iframe欢迎页面

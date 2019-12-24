@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use cms\Http\Controllers\Controller;
 use cms\Http\Models\Admin as Admins;
 use DB;
-use cms\Http\Models\BaseModel as Base;
 
 class Admin extends Controller
 {
