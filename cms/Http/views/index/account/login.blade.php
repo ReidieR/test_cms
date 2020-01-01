@@ -39,7 +39,7 @@
           <div class="layui-form-item">
             <label class="layui-form-label">账号</label>
             <div class="layui-input-block">
-              <input type="text" name="username" lay-verify="required" lay-reqtext="请输入账号" placeholder="请输入用户名/邮箱/手机号" class="layui-input">
+            <input type="text" value="{{old('username')}}" name="username" lay-verify="required" lay-reqtext="请输入账号" placeholder="请输入用户名/邮箱/手机号" class="layui-input">
             </div>
           </div>
           <div class="layui-form-item">

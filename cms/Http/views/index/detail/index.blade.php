@@ -13,8 +13,8 @@
 {{-- 主体左侧内容展示区 --}}
 <div class="layui-col-lg9">
   <article>
-  <h2>{{$article['title']}}</h2>
-  <p>{!!$content['content']!!}</p>
+    <h2>{{$article['title']}}</h2>
+    <p>{!!$content['content']!!}</p>
   </article>
 </div>
 {{-- 主体右侧固定内容区 --}}

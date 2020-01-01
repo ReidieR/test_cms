@@ -3,7 +3,10 @@
 /* 公共顶部导航 开始 */
 body {
   background-color: #eee;
-  min-width: 1200px;
+  /* min-width: 1200px; */
+}
+iframe body {
+  min-width: 800px;
 }
 #public_nave {
   position: fixed;
@@ -158,7 +161,7 @@ body {
 }
 /* 列表页样式  结束 */
 
-/*个人式开中心始 */
+/*个人中心样式开始 */
 #user_center_nav:hover {
   cursor: pointer;
 }
@@ -173,4 +176,19 @@ body {
   border-bottom: 1px solid #000;
   margin-bottom: 10px;
 }
+#member_conllect_article_box .panel-heading {
+  display: flex;
+  justify-content: space-between;
+}
+#member_conllect_article_box .panel-heading span:hover {
+  cursor: pointer;
+}
+#pageModal {
+  margin-top: 100px;
+  height: 500px;
+}
 /* 个人中心样式结束 */
+
+/* 写文章页面样式开始 */
+
+/* 写文章页面样式结束  */

@@ -51,7 +51,7 @@ class Account extends Controller
             }
         }
         $user_id = Auth::guard('member')->user()->user_id;
-        return redirect('/');
+        return redirect()->intended('/');
     }
 
     // 註冊頁面

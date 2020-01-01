@@ -4,9 +4,8 @@
       <div class="layui-card-header">个人中心</div>
       <div class="layui-card-body">
         <dl>
-        <dd><a href="/member/{{isset(Auth::guard('member')->user()->user_id)?Auth::guard('member')->user()->user_id:''}}">我的主页</a></dd>
-        <dd><a href="/edit/{{isset(Auth::guard('member')->user()->user_id)?Auth::guard('member')->user()->user_id:''}}">写文章</a></dd>
-        <dd><a href="/conllect/{{isset(Auth::guard('member')->user()->user_id)?Auth::guard('member')->user()->user_id:''}}">个人收藏</a></dd>
+        <dd><a href="/member">我的主页</a></dd>
+        <dd><a href="/edit">写文章</a></dd>
         </dl>
       </div>
     </div>

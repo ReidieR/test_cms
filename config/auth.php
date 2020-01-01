@@ -81,7 +81,7 @@ return [
         ],
         'admins' => [
             'driver' => 'eloquent',
-            'model' => cms\User::class,
+            'model' => cms\Admin::class,
         ],
         'members' => [
             'driver' => 'eloquent',

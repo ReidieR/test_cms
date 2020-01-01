@@ -17,6 +17,7 @@ class AdminAuth
      */
     public function handle($request, Closure $next)
     {
+        // dd(Auth::guard('admin')->user());
         if (Auth::guard('admin')->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
                 return response()->json(['code'=>401,'msg'=>'該頁面不見了']);
